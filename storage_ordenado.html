@@ -48,6 +48,12 @@
 <link rel="stylesheet" href="jquery-ui.theme.min.css">
 <script src="muestra_datos_websql.js"></script>
 
+	
+	
+	
+	
+	
+	<script src="phonegap.js"></script>
 </head>
 <body>	
 
@@ -81,6 +87,18 @@ $("#peo").hide(); //esconder boton
 
 
 $("#fechas").click(function(){
+	navigator.notification.alert(
+		'hola',
+		null,
+		'game over',
+		'done');
+	playBeep();
+	vibrate();
+	
+	
+	function playBeep(){ navigator.notification.beep(1); }
+	function vibrate(){ navigator.notification.vibrate(2000); }
+	
 $("#peo").fadeIn(3000);//se aparece el boton
 	$( "#datepicker" ).datepicker("show");//se muestra el datepicker
 
